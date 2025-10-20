@@ -29,17 +29,17 @@ public class Main {
         }
 
         //case №3
+        /** Календарный год может быть високосным в двух случаях: он должен БЫТЬ КРАТНЫМ 4,
+         * но при этом НЕ должен быть КРАТНЫМ 100, или год КРАТЕН 400 */
 
         Random random2 = new Random();
         int year  = random.nextInt(2025 - 1584) + 1584;
         //System.out.println(year);
 
-        if (year % 4 == 0){
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
             System.out.println(year + " год является високосным \n");
-        } else if (year % 100 != 0) {
+        } else {
             System.out.println(year + " год не является високосным \n");
-        } else if (year % 400 == 0){
-            System.out.println(year + " год является високосным \n");
         }
 
         //case №4
