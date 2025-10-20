@@ -24,7 +24,7 @@ public class Main {
 
         if (clientOS > 0 && productionDate < clientDeviceYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке \n");
-        } else {
+        } else if (clientOS == 0 && productionDate < clientDeviceYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке \n");
         }
 
@@ -36,11 +36,13 @@ public class Main {
         int year  = random.nextInt(2025 - 1584) + 1584;
         //System.out.println(year);
 
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
-            System.out.println(year + " год является високосным \n");
-        } else {
-            System.out.println(year + " год не является високосным \n");
-        }
+        if (year < 1584) {
+            System.out.println("Введённый год меньше 1584 года, когда был введён вискосный год");
+        } else if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
+                System.out.println(year + " год является високосным \n");
+            } else {
+                System.out.println(year + " год не является високосным \n");
+            }
 
         //case №4
 
@@ -64,41 +66,25 @@ public class Main {
 
         int monthNumber = 12;
         switch (monthNumber) {
+            case 12:
             case 1:
-                System.out.println("Сейчас сезон зимы");
-                break;
             case 2:
                 System.out.println("Сейчас сезон зимы");
                 break;
             case 3:
-                System.out.println("Сейчас сезон весны");
-                break;
             case 4:
-                System.out.println("Сейчас сезон весны");
-                break;
             case 5:
                 System.out.println("Сейчас сезон весны");
                 break;
             case 6:
-                System.out.println("Сейчас сезон лета");
-                break;
             case 7:
-                System.out.println("Сейчас сезон лета");
-                break;
             case 8:
                 System.out.println("Сейчас сезон лета");
                 break;
             case 9:
-                System.out.println("Сейчас сезон осени");
-                break;
             case 10:
-                System.out.println("Сейчас сезон осени");
-                break;
             case 11:
                 System.out.println("Сейчас сезон осени");
-                break;
-            case 12:
-                System.out.println("Сейчас сезон зимы");
                 break;
             default:
                 System.out.println("Такого месяца не существует");
