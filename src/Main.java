@@ -20,6 +20,7 @@ public class Main {
         /** Генерим новый рандом, где 0 - система iOS, 1 - Android */
         Random random0 = new Random();
         int checkClientOS  = random.nextInt(2 - 0);
+        //System.out.println(checkClientOS);
 
         Random random1 = new Random();
         int productionDate  = random.nextInt(2025 - 2012) + 2012;
@@ -27,10 +28,14 @@ public class Main {
         //System.out.println(productionDate);
 
         /** Проверка на тип системы и на дату её производства */
-        if (checkClientOS > 0 && productionDate < clientDeviceYear) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке \n");
-        } else if (checkClientOS == 0 && productionDate < clientDeviceYear) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке \n");
+        if (checkClientOS > 0 && productionDate >= clientDeviceYear) {
+            System.out.println("Установите версию приложения для Android по ссылке \n");
+        } else if (checkClientOS > 0 && productionDate < clientDeviceYear) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке \n");
+            } else if (checkClientOS == 0 && productionDate >= clientDeviceYear) {
+                    System.out.println("Установите версию приложения для iOS по ссылке \n");
+                } else if (checkClientOS == 0 && productionDate < clientDeviceYear) {
+                        System.out.println("Установите облегченную версию приложения для Android по ссылке \n");
         }
 
         //case №3
